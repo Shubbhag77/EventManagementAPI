@@ -15,7 +15,7 @@ app = FastAPI(title="Event Management API")
 # CORS setup
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -42,7 +42,6 @@ app.include_router(attendees.router, prefix="/attendees", tags=["attendees"])
 
 @app.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    # Use the database object imported from database.py
     user = await database.users.find_one({"username": form_data.username})
 
     if user is None:
