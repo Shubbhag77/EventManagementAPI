@@ -69,7 +69,6 @@ async def update_attendee(attendee_id: str, attendee_update: AttendeeUpdate) -> 
         {"$set": update_data}
     )
 
-    # Return updated attendee
     return await get_attendee(attendee_id)
 
 
