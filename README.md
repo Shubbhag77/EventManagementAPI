@@ -9,7 +9,7 @@ A RESTful API for managing events and attendees built with FastAPI and MongoDB.
 - Check-in attendees
 - Automatic event status updates
 - Bulk attendee check-in via CSV upload
-- JWT Authentication (Extra Credit)
+- JWT Authentication
 
 ## Requirements
 
